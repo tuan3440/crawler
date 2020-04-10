@@ -10,6 +10,7 @@
  * @license http://opensource.org/licenses/MIT MIT License
  */
 
+ 
 // set a constant that holds the project's folder path, like "/var/www/".
 // DIRECTORY_SEPARATOR adds a slash to the end of the path
 define('ROOT', __DIR__ . DIRECTORY_SEPARATOR);
@@ -23,15 +24,24 @@ if (file_exists(ROOT . 'vendor/autoload.php')) {
 }
 
 // load application config (error reporting etc.)
-require APP . '/config/config.php';
+require_once APP . 'config/config.php';
 
 // FOR DEVELOPMENT: this loads PDO-debug, a simple function that shows the SQL query (when using PDO).
 // If you want to load pdoDebug via Composer, then have a look here: https://github.com/panique/pdo-debug
-require APP . '/libs/pdo-debug.php';
+ 
 
+
+require_once APP . 'controllers/page.php';
+require_once APP . 'controllers/dantri.php';
+require_once APP . 'controllers/vnexpress.php';
+require_once APP . 'controllers/vietnamnet.php';
+require_once APP . 'controllers/curl.php';
+require_once APP . 'controllers/homepage.php';
+require_once APP . 'model/model.php';
 // load application class
-require APP . '/core/application.php';
-require APP . '/core/controller.php';
+require_once APP . 'core/application.php';
+require_once APP . 'core/controller.php';
 
+use core\application;
 // start the application
 $app = new Application();
