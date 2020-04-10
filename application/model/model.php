@@ -1,5 +1,5 @@
 <?php
-namespace model;
+namespace App\Model;
 use Exception;
 class Model
 
@@ -16,13 +16,13 @@ class Model
         }
     }
 
-    function addData($title, $content, $link, $date)
+    function addData($title, $content, $date)
     {
+        
         $title = addslashes($title);
         $content = addslashes($content);
-        $link = addslashes($link);
         $date = addslashes($date);
-        $sql = "INSERT INTO vietnamnet(title, content, date, link) VALUES ('$title', '$content', '$date', '$link')";
+        $sql = "INSERT INTO data(title, content, date) VALUES ('$title', '$content', '$date')";
         
      
         if (!mysqli_query($this->db, $sql)) {

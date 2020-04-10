@@ -1,11 +1,12 @@
 <?php
 
-namespace core;
+namespace App\Core;
 
-use Controllers\pages\vietnamnet;
-use Controllers\pages\vnexpress;
-use Controllers\pages\dantri;
-use controllers\homepage;
+use App\Crawler\Vietnamnet;
+use App\Crawler\Vnexpress;
+use App\Crawler\Dantri;
+use App\Controllers\HomePage;
+
 class Application
 {
     /** @var null The controller */
@@ -59,18 +60,20 @@ class Application
 
             if (strlen(strstr($url, 'vietnamnet')) > 0) {
                $vietnamnet = new Vietnamnet($url);
-               $vietnamnet->getData($url);
+               $vietnamnet->getData();
             } 
 
-            if (strlen(strstr($url, 'dantri')) > 0) {
+            else if (strlen(strstr($url, 'dantri')) > 0) {
                 $dantri = new Dantri($url);
                $dantri->getData();
             }
 
-            if (strlen(strstr($url, 'vnexpress')) > 0) {
+            else if (strlen(strstr($url, 'vnexpress')) > 0) {
                 $vnexpress = new Vnexpress($url);
                $vnexpress->getData();
             }
+
+            else die("Url not validate");
 
            
             

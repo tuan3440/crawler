@@ -1,8 +1,9 @@
 <?php
 
 
-namespace core;
-use model\model;
+namespace App\Core;
+
+use App\Model\Model;
 use Exception;
 /**
  * This is the "base controller class". All other "real" controllers extend this class.
@@ -53,39 +54,7 @@ class Controller
         $this->model = new Model($this->db);
     }
 
-    public function addToTheDatabase($title, $content, $link, $date)
-    {
-        try {
-            $this->checkNull($title, $content, $link, $date);
-           
-            try {
-               $this->model->addData($title, $content, $link, $date);
-            }
-
-            catch (Exception $e) {
-                echo $e->getMessage();
-            }
-
-        }
-        
-        catch (Exception $e) {
-            echo $e->getMessage();
-        }
-
-    }
     
-
-    public function checkNull($title, $content, $link, $date) {
-        if($title == NULL || $content == NULL || $link == NULL || $date == NULL) {
-            throw new Exception("Don't get data from url");
-        }
-        
-
-        return true;
-    }
-
-
-   
 
 
 }

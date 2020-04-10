@@ -1,6 +1,6 @@
 <?php
-namespace Controllers;
-use core\Controller;
+namespace App\Controllers;
+use Core\Controller;
 /**
  * Class Error
  *
