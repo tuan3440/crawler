@@ -3,6 +3,7 @@
 
 namespace core;
 use model\model;
+use Exception;
 /**
  * This is the "base controller class". All other "real" controllers extend this class.
  */
@@ -54,19 +55,37 @@ class Controller
 
     public function addToTheDatabase($title, $content, $link, $date)
     {
-        if(checkNull($title, $content, $link, $date))
-        $this->model->addData($title, $content, $link, $date);
+        try {
+            $this->checkNull($title, $content, $link, $date);
+           
+            try {
+               $this->model->addData($title, $content, $link, $date);
+            }
 
-        else
-        echo "Don't get data";
+            catch (Exception $e) {
+                echo $e->getMessage();
+            }
+
+        }
+        
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
     }
+    
 
-    public checkNull($title, $content, $link, $date) {
-        if($title == NULL || $content == NULL || $link == NULL || $date == NULL) 
-        return false;
+    public function checkNull($title, $content, $link, $date) {
+        if($title == NULL || $content == NULL || $link == NULL || $date == NULL) {
+            throw new Exception("Don't get data from url");
+        }
+        
 
         return true;
     }
+
+
+   
 
 
 }

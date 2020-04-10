@@ -18,7 +18,7 @@ use core\Controller;
 
          
 
-         function getTitle() {
+         public function getTitle() {
         
             preg_match_all($this->regexTitle, $this->html, $title);
              return $title[1];
@@ -26,19 +26,19 @@ use core\Controller;
          }
   
   
-         function getLink() {
+         public function getLink() {
           preg_match_all($this->regexLink, $this->html, $link);
           return $link[1];
         }
   
-        function getDate($data) {
+         public function getDate($data) {
           preg_match_all($this->regexDate, $data, $date);
 
           return $date[0][0];
         }
   
   
-     function getContent($data) {
+         public function getContent($data) {
          preg_match_all($this->regexContent, $data, $content);
          
         return $content[0][0];
@@ -47,29 +47,29 @@ use core\Controller;
      }
 
       
-     function getData($url) {
+         public function getData($url) {
            
      
-      $title = $this->getTitle();
-      $link = $this->getLink();
+               $title = $this->getTitle();
+               $link = $this->getLink();
 
-      foreach(array_combine($title, $link) as $title => $link) {
-       
-          $suburl = $url.$link;
-         
-          $sub = new Curl($suburl);
-          $contentPage = $sub->getContentPage();
-          
-          $content = $this->getContent($contentPage);
-          
-          $date = $this->getDate($contentPage);
-      
-         $database = new Controller();
-         $database->addToTheDatabase($title, $link, $content, $date);
-          
-      }
+               foreach(array_combine($title, $link) as $title => $link) {
+               
+                  $suburl = $url.$link;
+                  
+                  $sub = new Curl($suburl);
+                  $contentPage = $sub->getContentPage();
+                  
+                  $content = $this->getContent($contentPage);
+                  
+                  $date = $this->getDate($contentPage);
+               
+                  $database = new Controller();
+                  $database->addToTheDatabase($title, $link, $content, $date);
+                  
+               }
 
-      echo "Insert success";
+               echo "Insert success";
   }
 
   

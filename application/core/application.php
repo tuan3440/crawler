@@ -2,9 +2,9 @@
 
 namespace core;
 
-use Controllers\vietnamnet;
-use Controllers\vnexpress;
-use Controllers\dantri;
+use Controllers\pages\vietnamnet;
+use Controllers\pages\vnexpress;
+use Controllers\pages\dantri;
 use controllers\homepage;
 class Application
 {

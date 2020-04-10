@@ -1,6 +1,8 @@
 <?php
 
-namespace Controllers;
+namespace Controllers\pages;
+use Controllers\page;
+
 use core\Controller;
 
 class Vnexpress extends Page {

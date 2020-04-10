@@ -1,6 +1,8 @@
 <?php
 namespace model;
+use Exception;
 class Model
+
 {
     /**
      * @param object $db A PDO database connection
@@ -24,8 +26,10 @@ class Model
         
      
         if (!mysqli_query($this->db, $sql)) {
-            die("<br>Error: Unable to perform Insert Query<br>");
+          throw new Exception("Don't insert data to database"); 
         }
+        
+        return true;
 
     }
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace Controllers;
+namespace Controllers\pages;
+use Controllers\page;
+use core\Controller;
 class Dantri extends Page {
    
    public $regexTitle = "/<h2><a[^>]*>(.*?)<\/a><\/h2>/";

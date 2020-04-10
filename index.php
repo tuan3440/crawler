@@ -23,9 +23,9 @@ require_once APP . 'config/config.php';
 
 
 require_once APP . 'controllers/page.php';
-require_once APP . 'controllers/dantri.php';
-require_once APP . 'controllers/vnexpress.php';
-require_once APP . 'controllers/vietnamnet.php';
+require_once APP . 'controllers/pages/dantri.php';
+require_once APP . 'controllers/pages/vnexpress.php';
+require_once APP . 'controllers/pages/vietnamnet.php';
 require_once APP . 'controllers/curl.php';
 require_once APP . 'controllers/homepage.php';
 require_once APP . 'model/model.php';

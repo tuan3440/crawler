@@ -1,8 +1,9 @@
 <?php
 
-namespace Controllers;
-use core\Controller;
 
+namespace Controllers\pages;
+use Controllers\page;
+use core\Controller;
 class Vietnamnet extends Page {
 
     public $regexTitle = "/<h3><a[^>]*>(.*?)<\/a><\/h3>/";
