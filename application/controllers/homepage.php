@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 /**
@@ -18,10 +19,7 @@ class HomePage
     public function index()
     {
         // load views
-      
-        require APP . 'views/home/index.php';
-       
-    }
 
- 
+        require APP . 'views/home/index.php';
+    }
 }
