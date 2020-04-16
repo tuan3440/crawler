@@ -30,6 +30,8 @@ require_once APP . 'crawler/pages/vietnamnet.php';
 require_once APP . 'crawler/page.php';
 require_once APP . 'model/model.php';
 require_once APP . 'curl/curl.php';
+require_once APP . 'crawler/factory/abstractPageFactory.php';
+require_once APP . 'crawler/factory/pageFactory.php';
 // load application class
 require_once APP . 'core/application.php';
 

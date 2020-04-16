@@ -6,7 +6,7 @@ use App\Crawler\Vietnamnet;
 use App\Crawler\Vnexpress;
 use App\Crawler\Dantri;
 use App\Controllers\HomePage;
-
+use App\Crawler\PageFactory;
 class Application
 {
 
@@ -30,16 +30,13 @@ class Application
             if (!filter_var($url, FILTER_VALIDATE_URL)) {
                 die("Url not found");
             }
-            if (strlen(strstr($url, 'vietnamnet')) > 0) {
-                $vietnamnet = new Vietnamnet($url);
-                $vietnamnet->getData();
-            } else if (strlen(strstr($url, 'dantri')) > 0) {
-                $dantri = new Dantri($url);
-                $dantri->getData();
-            } else if (strlen(strstr($url, 'vnexpress')) > 0) {
-                $vnexpress = new Vnexpress($url);
-                $vnexpress->getData();
-            } else die("Url not validate");
+            //simple Factory
+            // $page = PageFactory::makeObject($url);
+            //Abstract Factory
+            $page = new PageFactory();
+            $page = $page->getPage($url);
+            if($page != null)  $page->getData($url);
+             else die("Url not validate");
         }
     }
 }
