@@ -5,30 +5,21 @@ namespace App\Crawler;
 class PageFactory extends AbstractPageFactory
 {
 
-    //Simple Factory
-    // public static function makeObject($url)
-    // {
-    //     if (strlen(strstr($url, 'vietnamnet')) > 0) {
-    //         return new Vietnamnet($url);
+    protected $url; 
 
-    //     } else if (strlen(strstr($url, 'dantri')) > 0) {
-    //         return new Dantri($url);
-
-    //     } else if (strlen(strstr($url, 'vnexpress')) > 0) {
-    //         return new Vnexpress($url);
-
-    //     } else return null;
-    // }
-
-    //Abstract Factory
-    public function getPage($url)
+    public __construct($url)
     {
-        if (strlen(strstr($url, 'vietnamnet')) > 0) {
-            return new Vietnamnet($url);
-        } else if (strlen(strstr($url, 'dantri')) > 0) {
-            return new Dantri($url);
-        } else if (strlen(strstr($url, 'vnexpress')) > 0) {
-            return new Vnexpress($url);
+        $this->url = $url;
+    }
+
+    public function getPage()
+    {
+        if (strlen(strstr($this->url, 'vietnamnet')) > 0) {
+            return new Vietnamnet($this->url);
+        } else if (strlen(strstr($this->url, 'dantri')) > 0) {
+            return new Dantri($this->url);
+        } else if (strlen(strstr($this->url, 'vnexpress')) > 0) {
+            return new Vnexpress($this->url);
         } else return null;
     }
 }
