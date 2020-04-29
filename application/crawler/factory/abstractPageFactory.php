@@ -4,5 +4,5 @@ namespace App\Crawler;
 
 abstract class AbstractPageFactory
 {
-    abstract function getPage($url);
+    abstract function getPage();
 }

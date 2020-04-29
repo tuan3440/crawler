@@ -7,6 +7,7 @@ use Exception;
 
 class InsertDataController extends Controller
 {
+    
 
     public function addToTheDatabase($title, $content, $date)
     {

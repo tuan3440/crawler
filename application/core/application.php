@@ -33,7 +33,7 @@ class Application
             //simple Factory
             // $page = PageFactory::makeObject($url);
             //Abstract Factory
-            $page = new PageFactory();
+            $page = new PageFactory($url);
             $page = $page->getPage($url);
             if($page != null)  $page->getData($url);
              else die("Url not validate");

@@ -16,9 +16,9 @@ class Controller
         $this->loadModel();
     }
 
-    private function openDatabaseConnection()
+    public function openDatabaseConnection()
     {
-        $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $this->db = mysqli_connect('localhost', 'root', '20173440', 'crawler_data');
         if (!$this->db) {
             throw new Exception("Error: Cannot connect to the database");
         } else {

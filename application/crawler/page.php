@@ -11,7 +11,7 @@ class Page
    protected $regexTitle;
    protected $regexContent;
    protected $regexDate;
-   protected $regexLink;
+   
 
    function __construct($url)
    {

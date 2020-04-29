@@ -7,7 +7,7 @@ class PageFactory extends AbstractPageFactory
 
     protected $url; 
 
-    public __construct($url)
+    public function __construct($url)
     {
         $this->url = $url;
     }

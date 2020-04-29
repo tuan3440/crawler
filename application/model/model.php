@@ -13,6 +13,7 @@ class Model
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+        
     }
 
     public function addData($title, $content, $date)

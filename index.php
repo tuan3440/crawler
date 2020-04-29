@@ -19,21 +19,21 @@ require_once APP . 'config/config.php';
 // If you want to load pdoDebug via Composer, then have a look here: https://github.com/panique/pdo-debug
 
 
-require_once APP . 'core/controller.php';
-require_once APP . 'controllers/homepage.php';
-require_once APP . 'controllers/insertDataController.php';
-require_once APP . 'crawler/CrawlerInterface.php';
-require_once APP . 'crawler/page.php';
-require_once APP . 'crawler/pages/dantri.php';
-require_once APP . 'crawler/pages/vnexpress.php';
-require_once APP . 'crawler/pages/vietnamnet.php';
-require_once APP . 'crawler/page.php';
-require_once APP . 'model/model.php';
-require_once APP . 'curl/curl.php';
-require_once APP . 'crawler/factory/abstractPageFactory.php';
-require_once APP . 'crawler/factory/pageFactory.php';
-// load application class
-require_once APP . 'core/application.php';
+// require_once APP . 'core/controller.php';
+// require_once APP . 'controllers/homepage.php';
+// require_once APP . 'controllers/insertDataController.php';
+// require_once APP . 'crawler/CrawlerInterface.php';
+// require_once APP . 'crawler/page.php';
+// require_once APP . 'crawler/pages/dantri.php';
+// require_once APP . 'crawler/pages/vnexpress.php';
+// require_once APP . 'crawler/pages/vietnamnet.php';
+// require_once APP . 'crawler/page.php';
+// require_once APP . 'model/model.php';
+// require_once APP . 'curl/curl.php';
+// require_once APP . 'crawler/factory/abstractPageFactory.php';
+// require_once APP . 'crawler/factory/pageFactory.php';
+// // load application class
+// require_once APP . 'core/application.php';
 
 use App\Core\Application;
 // start the application
